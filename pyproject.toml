@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orjsonl"
+version = "0.1.0"
+authors = [
+  {name="Umar Butler", email="umar@umar.au"},
+]
+description = "A simple, fast and lightweight Python library for loading, saving, streaming and appending jsonl (also known as JSON Lines) files."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file="LICENSE"}
+keywords = [
+    "json",
+    "jsonl",
+    "jsonlines",
+    "orjson"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed"
+]
+dependencies = [
+    "orjson"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/umarbutler/orjsonl"
+"Documentation" = "https://github.com/umarbutler/orjsonl/blob/main/README.md"
+"Bug Tracker" = "https://github.com/umarbutler/orjsonl/issues"
+"Source" = "https://github.com/umarbutler/orjsonl"

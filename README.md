@@ -1,6 +1,6 @@
 # orjsonl
 
-![PyPI](https://img.shields.io/pypi/v/orjsonl) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/umarbutler/orjsonl/ci) ![Codecov](https://img.shields.io/codecov/c/github/umarbutler/orjsonl) ![PyPI - Downloads](https://img.shields.io/pypi/dm/orjsonl)
+<a href="https://pypi.org/project/orjsonl/" alt="PyPI Version"><img src="https://img.shields.io/pypi/v/orjsonl"></a> <a href="https://github.com/umarbutler/orjsonl/actions/workflows/ci.yml" alt="Build Status"><img src="https://img.shields.io/github/workflow/status/umarbutler/orjsonl/ci"></a> <a href="" alt="Code Coverage"><img src="https://img.shields.io/codecov/c/github/umarbutler/orjsonl"></a> <a href="https://pypistats.org/packages/orjsonl" alt="Downloads"><img src="https://img.shields.io/pypi/dm/orjsonl"></a>
 
 orjsonl is a simple, fast and lightweight Python library for loading, saving, streaming and appending [jsonl](https://jsonlines.org/) (also known as JSON Lines) files. It is powered by [orjson](https://github.com/ijl/orjson), the quickest and most correct json serializer currently available for Python.
 

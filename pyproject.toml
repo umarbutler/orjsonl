@@ -19,7 +19,8 @@ keywords = [
     "orjson",
     "lines",
     "json lines",
-    "fast"
+    "fast",
+    "ndjson"
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

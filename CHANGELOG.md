@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - Allowed for the `default` and `option` arguments to be passed to `orjson.dumps()` through `save()` and `append()`.
+- Added 'ndjson' as a keyword in the project metadata.
 
 ## [0.1.1] - 2022-11-19
 

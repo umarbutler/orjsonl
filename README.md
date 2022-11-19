@@ -55,9 +55,9 @@ def stream(
 ) -> map: ...
 ```
 
-[`stream()`](#stream) creates a map object that deserializes a UTF-8-encoded jsonl file to Python objects.
+[`stream()`](#stream) creates a `map` object that deserializes a UTF-8-encoded jsonl file to Python objects.
 
-The only argument taken by this function is `path`, a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be deserialized by the map object.
+The only argument taken by this function is `path`, a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be deserialized by the `map` object.
 
 This function returns a `map` object that deserializes the jsonl file to `dict`, `list`, `int`, `float`, `str`, `bool` or `None` objects.
 

@@ -16,7 +16,10 @@ keywords = [
     "json",
     "jsonl",
     "jsonlines",
-    "orjson"
+    "orjson",
+    "lines",
+    "json lines",
+    "fast"
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

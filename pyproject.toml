@@ -45,7 +45,7 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/umarbutler/orjsonl"
-"Documentation" = "https://github.com/umarbutler/orjsonl/blob/main/README.md"
-"Bug Tracker" = "https://github.com/umarbutler/orjsonl/issues"
-"Source" = "https://github.com/umarbutler/orjsonl"
+Homepage = "https://github.com/umarbutler/orjsonl"
+Documentation = "https://github.com/umarbutler/orjsonl/blob/main/README.md"
+Issues = "https://github.com/umarbutler/orjsonl/issues"
+Source = "https://github.com/umarbutler/orjsonl"

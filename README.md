@@ -19,7 +19,7 @@ This code snippet demonstrates how jsonl files can be loaded, saved, appended an
 ```python
 >>> import orjsonl
 >>> data = [
-    {"hello" : "world"},
+    {'hello' : 'world'},
     [1.1, 2.2, 3.3],
     42,
     True,
@@ -28,7 +28,7 @@ This code snippet demonstrates how jsonl files can be loaded, saved, appended an
 >>> orjsonl.save(path='test.jsonl', data=data)
 >>> orjsonl.load(path='test.jsonl')
 [{'hello': 'world'}, [1.1, 2.2, 3.3], 42, True, None]
->>> orjsonl.append(path='test.jsonl', data=[("a", "b", "c")])
+>>> orjsonl.append(path='test.jsonl', data=[('a', 'b', 'c')])
 >>> [object_ for object_ in orjsonl.stream(path='test.jsonl')]
 [{'hello': 'world'}, [1.1, 2.2, 3.3], 42, True, None, ['a', 'b', 'c']]
 ```

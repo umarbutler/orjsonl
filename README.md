@@ -41,7 +41,7 @@ def load(
 ) -> list[dict | list | int | float | str | bool | None]: ...
 ```
 
-[`load()`](#load) deserializes a UTF-8-encoded jsonl file to a list of Python objects.
+`load()` deserializes a UTF-8-encoded jsonl file to a list of Python objects.
 
 `path` is a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be deserialized.
 
@@ -55,7 +55,7 @@ def stream(
 ) -> map: ...
 ```
 
-[`stream()`](#stream) creates a `map` object that deserializes a UTF-8-encoded jsonl file to Python objects.
+`stream()` creates a `map` object that deserializes a UTF-8-encoded jsonl file to Python objects.
 
 `path` is a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be deserialized by the `map` object.
 
@@ -72,7 +72,7 @@ def save(
 ) -> None: ...
 ```
 
-[`save()`](#save) serializes an iterable of Python objects to a UTF-8-encoded jsonl file.
+`save()` serializes an iterable of Python objects to a UTF-8-encoded jsonl file.
 
 `path` is a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be saved.
 
@@ -94,7 +94,7 @@ def append(
 ) -> None: ...
 ```
 
-[`append()`](#append) serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
+`append()` serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
 
 `path` is a path-like object giving the pathname (absolute or relative to the current working directory), or an integer file descriptor, of the jsonl file to be appended.
 

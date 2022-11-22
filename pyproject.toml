@@ -20,7 +20,12 @@ keywords = [
     "lines",
     "json lines",
     "fast",
-    "ndjson"
+    "ndjson",
+    "gzip",
+    "bzip2",
+    "xz",
+    "zstandard",
+    "xopen"
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

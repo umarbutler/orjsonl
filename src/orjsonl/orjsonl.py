@@ -11,6 +11,25 @@ import orjson
 from collections.abc import Iterable
 
 
+def load(
+    path: Union[str, bytes, os.PathLike],
+    decompression_threads: Optional[int] = None,
+    compression_format: Optional[str] = None
+) -> List[Union[dict, list, int, float, str, bool, None]]:
+    """Deserialize a compressed or uncompressed UTF-8-encoded jsonl file to a list of Python objects.
+
+    Args:
+        path (str | bytes | os.PathLike): A path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be deserialized.
+        decompression_threads (int, optional): An optional integer passed to xopen.xopen() as the 'threads' argument that specifies the number of threads that should be used for decompression. Defaults to None.
+        compression_format (str, optional): An optional string passed to xopen.xopen() as the 'format' argument that overrides the autodetection of the file's compression format based on its extension or content. Possible values are 'gz', 'xz', 'bz2' and 'zst'. Defaults to None.
+
+    Returns:
+        list[dict | list | int | float | str | bool | None]: A list of deserialized objects."""
+
+    with xopen(path, 'rb', threads=decompression_threads, format=compression_format) as file:
+        return [orjson.loads(json) for json in file]
+
+
 def stream(
     path: Union[str, bytes, os.PathLike],
     decompression_threads: Optional[int] = None,
@@ -29,25 +48,6 @@ def stream(
     with xopen(path, 'rb', threads=decompression_threads, format=compression_format) as file:
         for json in file:
             yield orjson.loads(json)
-
-
-def load(
-    path: Union[str, bytes, os.PathLike],
-    decompression_threads: Optional[int] = None,
-    compression_format: Optional[str] = None
-) -> List[Union[dict, list, int, float, str, bool, None]]:
-    """Deserialize a compressed or uncompressed UTF-8-encoded jsonl file to a list of Python objects.
-
-    Args:
-        path (str | bytes | os.PathLike): A path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be deserialized.
-        decompression_threads (int, optional): An optional integer passed to xopen.xopen() as the 'threads' argument that specifies the number of threads that should be used for decompression. Defaults to None.
-        compression_format (str, optional): An optional string passed to xopen.xopen() as the 'format' argument that overrides the autodetection of the file's compression format based on its extension or content. Possible values are 'gz', 'xz', 'bz2' and 'zst'. Defaults to None.
-
-    Returns:
-        list[dict | list | int | float | str | bool | None]: A list of deserialized objects."""
-
-    with xopen(path, 'rb', threads=decompression_threads, format=compression_format) as file:
-        return [orjson.loads(json) for json in file]
 
 
 def save(

@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "orjsonl"
-version = "0.1.3"
+version = "0.2.0"
 authors = [
   {name="Umar Butler", email="umar@umar.au"},
 ]
-description = "A simple, fast and lightweight Python library for loading, saving, streaming and appending jsonl (also known as JSON Lines) files."
+description = "A simple, fast and lightweight Python library for loading, saving, streaming and appending both compressed and uncompressed jsonl (also known as ‘json lines’, ‘newline-delimited json’ and ‘ndjson’) files."
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text="MIT"}
@@ -42,7 +42,8 @@ classifiers = [
     "Typing :: Typed"
 ]
 dependencies = [
-    "orjson"
+    "orjson>=3.7.7",
+    "xopen>=1.7.0"
 ]
 
 [project.urls]

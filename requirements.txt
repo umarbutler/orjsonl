@@ -1,1 +1,2 @@
-orjson
+orjson>=3.7.7
+xopen>=1.7.0

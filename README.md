@@ -131,7 +131,7 @@ def append(
 ) -> None
 ```
 
-`append()` serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
+`append()` serializes and appends an iterable of Python objects to a compressed or uncompressed UTF-8-encoded jsonl file jsonl file.
 
 `path` is a path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be appended.
 

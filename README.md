@@ -12,7 +12,7 @@
 pip install orjsonl
 ```
 
-To read or write Zstandard files, either [`zstd`](https://github.com/facebook/zstd) or the [`zstandard`](https://pypi.org/project/zstandard/) Python package must be installed.
+To read or write Zstandard files, you must also install either [`zstd`](https://github.com/facebook/zstd) or the [`zstandard`](https://pypi.org/project/zstandard/) Python package.
 
 ## Usage
 

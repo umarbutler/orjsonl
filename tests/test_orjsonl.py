@@ -2,6 +2,7 @@
 
 import orjsonl
 from xopen import xopen
+import os
 
 data = [
     {'hello': 'world'},
@@ -17,6 +18,18 @@ jsonl = '{"hello":"world"}\n'\
         'true\n'\
         'null\n'\
 
+
+
+def test_save() -> None:
+    """Test the saving functionality of the orjsonl Python library."""
+
+    orjsonl.save('test_orjsonl.jsonl', data=data)
+    with open('test_orjsonl.jsonl', 'r', encoding='utf-8') as file:
+        assert file.read() == jsonl
+
+    orjsonl.save('test_orjsonl.jsonl.gz', data=data)
+    with xopen('test_orjsonl.jsonl.gz', 'r', encoding='utf-8') as file:
+        assert file.read() == jsonl
 
 
 def test_stream() -> None:
@@ -58,14 +71,5 @@ def test_append() -> None:
     with xopen('test_orjsonl.jsonl.gz', 'r', encoding='utf-8') as file:
         assert file.read() == jsonl + '["a","b","c"]\ntest\n{"lorem":"ipsum"}\n'
 
-
-def test_save() -> None:
-    """Test the saving functionality of the orjsonl Python library."""
-
-    orjsonl.save('test_orjsonl.jsonl', data=data)
-    with open('test_orjsonl.jsonl', 'r', encoding='utf-8') as file:
-        assert file.read() == jsonl
-
-    orjsonl.save('test_orjsonl.jsonl.gz', data=data)
-    with xopen('test_orjsonl.jsonl.gz', 'r', encoding='utf-8') as file:
-        assert file.read() == jsonl
+    os.remove('test_orjsonl.jsonl')
+    os.remove('test_orjsonl.jsonl.gz')

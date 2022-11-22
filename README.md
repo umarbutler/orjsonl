@@ -35,7 +35,7 @@ This code snippet demonstrates how jsonl files can be loaded, saved, appended an
 [{'hello': 'world'}, [1.1, 2.2, 3.3], 42, True, None, ['a', 'b', 'c']]
 ```
 
-The exact same functions can also be used to process jsonl files compressed with gzip, bzip2, xz and zstandard:
+The exact same functions can also be used to process jsonl files compressed with gzip, bzip2, xz and Zstandard:
 
 ```python
 >>> import orjsonl

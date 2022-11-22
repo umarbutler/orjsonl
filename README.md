@@ -106,7 +106,7 @@ def save(
 
 `data` is an iterable of Python objects to be serialized to the file.
 
-`default` is an optional callable passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`default`](https://github.com/ijl/orjson#default) argument that serializes subclasses or arbitrary types to a supported type.
+`default` is an optional callable passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`default`](https://github.com/ijl/orjson#default) argument that serializes subclasses or arbitrary types to supported types.
 
 `option` is an optional integer passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`option`](https://github.com/ijl/orjson#option) argument that modifies how data is serialized.
 
@@ -139,7 +139,7 @@ def append(
 
 `newline` is an optional Boolean flag that, if set to `False`, indicates that the file does not end with a newline and should, therefore, have one added before data is appended.
 
-`default` is an optional callable passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`default`](https://github.com/ijl/orjson#default) argument that serializes subclasses or arbitrary types to a supported type.
+`default` is an optional callable passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`default`](https://github.com/ijl/orjson#default) argument that serializes subclasses or arbitrary types to supported types.
 
 `option` is an optional integer passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`option`](https://github.com/ijl/orjson#option) argument that modifies how data is serialized.
 

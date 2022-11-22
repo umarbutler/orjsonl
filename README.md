@@ -110,7 +110,7 @@ def save(
 
 `option` is an optional integer passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`option`](https://github.com/ijl/orjson#option) argument that modifies how data is serialized.
 
-`compression_level` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`compresslevel`](https://github.com/pycompression/xopen/#usage) argument that determines the compression level for writing to gzip, xz and zstandard files.
+`compression_level` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`compresslevel`](https://github.com/pycompression/xopen/#usage) argument that determines the compression level for writing to gzip, xz and Zstandard files.
 
 `compression_threads` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`threads`](https://github.com/pycompression/xopen/#xopen) argument that specifies the number of threads that should be used for compression.
 
@@ -143,7 +143,7 @@ def append(
 
 `option` is an optional integer passed to [`orjson.dumps()`](https://github.com/ijl/orjson#serialize) as the [`option`](https://github.com/ijl/orjson#option) argument that modifies how data is serialized.
 
-`compression_level` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`compresslevel`](https://github.com/pycompression/xopen/#usage) argument that determines the compression level for writing to gzip, xz and zstandard files.
+`compression_level` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`compresslevel`](https://github.com/pycompression/xopen/#usage) argument that determines the compression level for writing to gzip, xz and Zstandard files.
 
 `compression_threads` is an optional integer passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`threads`](https://github.com/pycompression/xopen/#xopen) argument that specifies the number of threads that should be used for compression.
 

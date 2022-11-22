@@ -66,7 +66,7 @@ def save(
         data (Iterable): An iterable of Python objects to be serialized to the file.
         default (Callable, optional): An optional callable passed to orjson.dumps() as the 'default' argument that serializes subclasses or arbitrary types to supported types. Defaults to None.
         option (int, optional): An optional integer passed to orjson.dumps() as the 'option' argument that modifies how data is serialized. Defaults to 0.
-        compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and zstandard files. Defaults to None.
+        compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and Zstandard files. Defaults to None.
         compression_threads (int, optional): An optional integer passed to xopen.xopen() as the 'threads' argument that specifies the number of threads that should be used for compression. Defaults to None.
         compression_format (str, optional): An optional string passed to xopen.xopen() as the 'format' argument that overrides the autodetection of the file's compression format based on its extension. Possible values are 'gz', 'xz', 'bz2' and 'zst'. Defaults to None."""
 
@@ -94,7 +94,7 @@ def append(
         newline (bool, optional): An optional Boolean flag that, if set to False, indicates that the file does not end with a newline and should, therefore, have one added before data is appended. Defaults to True.
         default (Callable, optional): An optional callable passed to orjson.dumps() as the 'default' argument that serializes subclasses or arbitrary types to supported types. Defaults to None.
         option (int, optional): An optional integer passed to orjson.dumps() as the 'option' argument that modifies how data is serialized. Defaults to 0.
-        compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and zstandard files. Defaults to None.
+        compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and Zstandard files. Defaults to None.
         compression_threads (int, optional): An optional integer passed to xopen.xopen() as the 'threads' argument that specifies the number of threads that should be used for compression. Defaults to None.
         compression_format (str, optional): An optional string passed to xopen.xopen() as the 'format' argument that overrides the autodetection of the file's compression format based on its extension or content. Possible values are 'gz', 'xz', 'bz2' and 'zst'. Defaults to None."""
 

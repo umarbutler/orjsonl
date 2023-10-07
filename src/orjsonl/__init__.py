@@ -1,8 +1,9 @@
-"""A simple, fast and lightweight Python library for loading, saving, streaming and appending both compressed and uncompressed jsonl (also known as ‘json lines’, ‘newline-delimited json’ and ‘ndjson’) files."""
+"""A simple, fast and lightweight Python library for parsing jsonl files."""
 
 from .orjsonl import (
     stream,
     load,
     save,
-    append
+    append,
+    extend,
 )

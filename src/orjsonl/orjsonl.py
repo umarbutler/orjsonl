@@ -3,7 +3,8 @@ from typing import (
     Generator,
     List,
     Optional,
-    Callable
+    Callable,
+    Any
 )
 import os
 from xopen import xopen
@@ -78,6 +79,36 @@ def save(
 
 def append(
     path: Union[str, bytes, os.PathLike],
+    data: Any,
+    newline: Optional[bool] = True,
+    default: Optional[Callable] = None,
+    option: int = 0,
+    compression_level: Optional[int] = None,
+    compression_threads: Optional[int] = None,
+    compression_format: Optional[str] = None
+) -> None:
+    """Serialize and append a Python object to a compressed or uncompressed UTF-8-encoded jsonl file.
+
+    Args:
+        path (str | bytes | os.PathLike): A path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be appended.
+        data (Iterable): A Python object to be serialized and appended to the file.
+        newline (bool, optional): An optional Boolean flag that, if set to False, indicates that the file does not end with a newline and should, therefore, have one added before data is appended. Defaults to True.
+        default (Callable, optional): An optional callable passed to orjson.dumps() as the 'default' argument that serializes subclasses or arbitrary types to supported types. Defaults to None.
+        option (int, optional): An optional integer passed to orjson.dumps() as the 'option' argument that modifies how data is serialized. Defaults to 0.
+        compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and Zstandard files. Defaults to None.
+        compression_threads (int, optional): An optional integer passed to xopen.xopen() as the 'threads' argument that specifies the number of threads that should be used for compression. Defaults to None.
+        compression_format (str, optional): An optional string passed to xopen.xopen() as the 'format' argument that overrides the autodetection of the file's compression format based on its extension or content. Possible values are 'gz', 'xz', 'bz2' and 'zst'. Defaults to None."""
+
+    with xopen(path, 'ab', compresslevel=compression_level, threads=compression_threads, format=compression_format) as writer:
+        if not newline:
+            writer.write(b'\n')
+
+        writer.write(orjson.dumps(data, default=default, option=option))
+        writer.write(b'\n')
+
+
+def extend(
+    path: Union[str, bytes, os.PathLike],
     data: Iterable,
     newline: Optional[bool] = True,
     default: Optional[Callable] = None,
@@ -89,9 +120,9 @@ def append(
     """Serialize and append an iterable of Python objects to a compressed or uncompressed UTF-8-encoded jsonl file.
 
     Args:
-        path (str | bytes | os.PathLike): A path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be appended.
+        path (str | bytes | os.PathLike): A path-like object giving the pathname (absolute or relative to the current working directory) of the compressed or uncompressed UTF-8-encoded jsonl file to be extended.
         data (Iterable): An iterable of Python objects to be serialized and appended to the file.
-        newline (bool, optional): An optional Boolean flag that, if set to False, indicates that the file does not end with a newline and should, therefore, have one added before data is appended. Defaults to True.
+        newline (bool, optional): An optional Boolean flag that, if set to False, indicates that the file does not end with a newline and should, therefore, have one added before data is extended. Defaults to True.
         default (Callable, optional): An optional callable passed to orjson.dumps() as the 'default' argument that serializes subclasses or arbitrary types to supported types. Defaults to None.
         option (int, optional): An optional integer passed to orjson.dumps() as the 'option' argument that modifies how data is serialized. Defaults to 0.
         compression_level (int, optional): An optional integer passed to xopen.xopen() as the 'compresslevel' argument that determines the compression level for writing to gzip, xz and Zstandard files. Defaults to None.

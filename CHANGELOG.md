@@ -90,7 +90,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added the `load()` function, which deserializes a UTF-8-encoded jsonl file to a list of Python objects.
 - Added the `stream()` function, which creates a map object that deserializes a UTF-8-encoded jsonl file to Python objects.
 - Added the `save()` function, which serializes an iterable of Python objects to a UTF-8-encoded jsonl file.
-- Added the `append()` function, serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
+- Added the `append()` function, which serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
 
 [0.2.2]: https://github.com/umarbutler/orjsonl/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/umarbutler/orjsonl/compare/v0.2.0...v0.2.1

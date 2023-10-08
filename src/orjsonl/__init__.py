@@ -1,4 +1,4 @@
-"""A simple, fast and lightweight Python library for parsing jsonl files."""
+"""A lightweight, high-performance Python library for parsing jsonl files."""
 
 from .orjsonl import (
     stream,

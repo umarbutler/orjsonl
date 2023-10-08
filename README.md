@@ -2,7 +2,7 @@
 
 <a href="https://pypi.org/project/orjsonl/" alt="PyPI Version"><img src="https://img.shields.io/pypi/v/orjsonl"></a> <a href="https://github.com/umarbutler/orjsonl/actions/workflows/ci.yml" alt="Build Status"><img src="https://img.shields.io/github/actions/workflow/status/umarbutler/orjsonl/ci.yml?branch=main"></a> <a href="https://app.codecov.io/gh/umarbutler/orjsonl" alt="Code Coverage"><img src="https://img.shields.io/codecov/c/github/umarbutler/orjsonl"></a> <a href="https://pypistats.org/packages/orjsonl" alt="Downloads"><img src="https://img.shields.io/pypi/dm/orjsonl"></a>
 
-`orjsonl` is a simple, fast and lightweight Python library for parsing [jsonl](https://jsonlines.org/) files. It is powered by [`orjson`](https://github.com/ijl/orjson), the quickest and most correct json serializer currently available for Python.
+`orjsonl` is a lightweight, high-performance Python library for parsing jsonl files. It supports a wide variety of compression formats, including gzip, bzip2, xz and Zstandard. It is powered by [`orjson`](https://github.com/ijl/orjson), the fastest and most accurate json serializer for Python.
 
 ## Installation
 
@@ -12,11 +12,11 @@
 pip install orjsonl
 ```
 
-To read or write Zstandard files, one must also install either [`zstd`](https://github.com/facebook/zstd) or the [`zstandard`](https://pypi.org/project/zstandard/) Python package.
+To read or write Zstandard files, install either [`zstd`](https://github.com/facebook/zstd) or the [`zstandard`](https://pypi.org/project/zstandard/) Python package.
 
 ## Usage
 
-The code snippet below demonstrates how jsonl files can be saved, appended, extended, loaded and streamed:
+The code snippet below demonstrates how jsonl files can be saved, loaded, streamed, appended and extended with `orjsonl`:
 
 ```python
 >>> import orjsonl
@@ -35,11 +35,11 @@ The code snippet below demonstrates how jsonl files can be saved, appended, exte
 >>> orjsonl.load('test.jsonl')
 ['hello world', ['fizz', 'buzz'], {42 : 3.14}, True, False]
 >>> # Stream the jsonl file.
->>> [obj for obj in orjsonl.stream('test.jsonl')]
+>>> list(orjsonl.stream('test.jsonl'))
 ['hello world', ['fizz', 'buzz'], {42 : 3.14}, True, False]
 ```
 
-The abovementioned functions can also be used to process jsonl files compressed with gzip, bzip2, xz and Zstandard:
+`orjsonl` can also be used to process jsonl files compressed with gzip, bzip2, xz and Zstandard:
 
 ```python
 >>> orjsonl.save('test.jsonl.gz', data)

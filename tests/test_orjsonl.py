@@ -42,6 +42,10 @@ def test_append(tmp_path) -> None:
     helpers.save(tmp_path / 'test_orjsonl.jsonl', JSONL.encode('utf-8'))
     orjsonl.append(tmp_path / 'test_orjsonl.jsonl', data=DATA[-1])
     assert helpers.load(tmp_path / 'test_orjsonl.jsonl') == JSONL.encode('utf-8') + orjson.dumps(DATA[-1]) + b'\n'
+    
+    helpers.save(tmp_path / 'test_orjsonl.jsonl', JSONL.encode('utf-8'))
+    orjsonl.append(tmp_path / 'test_orjsonl.jsonl', data=DATA[-1], newline=False)
+    assert helpers.load(tmp_path / 'test_orjsonl.jsonl') == JSONL.encode('utf-8') + b'\n' + orjson.dumps(DATA[-1]) + b'\n'
 
 
 def test_extend(tmp_path) -> None:
@@ -50,3 +54,8 @@ def test_extend(tmp_path) -> None:
     helpers.save(tmp_path / 'test_orjsonl.jsonl', JSONL.encode('utf-8'))
     orjsonl.extend(tmp_path / 'test_orjsonl.jsonl', data=DATA[-2:])
     assert helpers.load(tmp_path / 'test_orjsonl.jsonl') == JSONL.encode('utf-8') + orjson.dumps(DATA[-2]) + b'\n' + orjson.dumps(DATA[-1]) + b'\n'
+
+
+    helpers.save(tmp_path / 'test_orjsonl.jsonl', JSONL.encode('utf-8'))
+    orjsonl.extend(tmp_path / 'test_orjsonl.jsonl', data=DATA[-2:], newline=False)
+    assert helpers.load(tmp_path / 'test_orjsonl.jsonl') == JSONL.encode('utf-8') + b'\n' + orjson.dumps(DATA[-2]) + b'\n' + orjson.dumps(DATA[-1]) + b'\n'

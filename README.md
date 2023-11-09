@@ -1,13 +1,10 @@
 # orjsonl
-
 <a href="https://pypi.org/project/orjsonl/" alt="PyPI Version"><img src="https://img.shields.io/pypi/v/orjsonl"></a> <a href="https://github.com/umarbutler/orjsonl/actions/workflows/ci.yml" alt="Build Status"><img src="https://img.shields.io/github/actions/workflow/status/umarbutler/orjsonl/ci.yml?branch=main"></a> <a href="https://app.codecov.io/gh/umarbutler/orjsonl" alt="Code Coverage"><img src="https://img.shields.io/codecov/c/github/umarbutler/orjsonl"></a> <a href="https://pypistats.org/packages/orjsonl" alt="Downloads"><img src="https://img.shields.io/pypi/dm/orjsonl"></a>
 
 `orjsonl` is a lightweight, high-performance Python library for parsing jsonl files. It supports a wide variety of compression formats, including gzip, bzip2, xz and Zstandard. It is powered by [`orjson`](https://github.com/ijl/orjson), the fastest and most accurate json serializer for Python.
 
 ## Installation
-
 `orjsonl` may be installed with `pip`:
-
 ```bash
 pip install orjsonl
 ```
@@ -15,9 +12,7 @@ pip install orjsonl
 To read or write Zstandard files, install either [`zstd`](https://github.com/facebook/zstd) or the [`zstandard`](https://pypi.org/project/zstandard/) Python package.
 
 ## Usage
-
 The code snippet below demonstrates how jsonl files can be saved, loaded, streamed, appended and extended with `orjsonl`:
-
 ```python
 >>> import orjsonl
 >>> # Create an iterable of Python objects.
@@ -40,7 +35,6 @@ The code snippet below demonstrates how jsonl files can be saved, loaded, stream
 ```
 
 `orjsonl` can also be used to process jsonl files compressed with gzip, bzip2, xz and Zstandard:
-
 ```python
 >>> orjsonl.save('test.jsonl.gz', data)
 >>> orjsonl.append('test.jsonl.gz', {42 : 3.14})
@@ -52,7 +46,6 @@ The code snippet below demonstrates how jsonl files can be saved, loaded, stream
 ```
 
 ### Load
-
 ```python
 def load(
     path: str | bytes | int | os.PathLike,
@@ -72,7 +65,6 @@ def load(
 This function returns a `list` object comprised of deserialized `dict`, `list`, `int`, `float`, `str`, `bool` or `None` objects.
 
 ### Stream
-
 ```python
 def stream(
     path: str | bytes | int | os.PathLike,
@@ -92,7 +84,6 @@ def stream(
 This function returns a `generator` that deserializes the file to `dict`, `list`, `int`, `float`, `str`, `bool` or `None` objects.
 
 ### Save
-
 ```python
 def save(
     path: str | bytes | int | os.PathLike,
@@ -122,7 +113,6 @@ def save(
 `compression_format` is an optional string passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`format`](https://github.com/pycompression/xopen/#v130-2022-01-10) argument that overrides the autodetection of the file’s compression format based on its extension. Possible values are ‘gz’, ‘xz’, ‘bz2’ and ‘zst’.
 
 ### Append
-
 ```python
 def append(
     path: str | bytes | int | os.PathLike,
@@ -155,7 +145,6 @@ def append(
 `compression_format` is an optional string passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`format`](https://github.com/pycompression/xopen/#v130-2022-01-10) argument that overrides the autodetection of the file’s compression format based on its extension or content. Possible values are ‘gz’, ‘xz’, ‘bz2’ and ‘zst’.
 
 ### Extend
-
 ```python
 def extend(
     path: str | bytes | int | os.PathLike,
@@ -188,5 +177,4 @@ def extend(
 `compression_format` is an optional string passed to [`xopen.xopen()`](https://github.com/pycompression/xopen/#xopen) as the [`format`](https://github.com/pycompression/xopen/#v130-2022-01-10) argument that overrides the autodetection of the file’s compression format based on its extension or content. Possible values are ‘gz’, ‘xz’, ‘bz2’ and ‘zst’.
 
 ## License
-
 This library is licensed under the [MIT License](https://github.com/umarbutler/orjsonl/blob/main/LICENSE).

@@ -5,14 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 ### Fixed
-- Fixed typos in this changelog.
+- Fixed typos in the changelog.
 
 ## [1.0.0] - 2023-11-09
 ### Changed
 - Version bump to 1.0.0 to flag that `orjsonl` is stable. 
 
 ### Fixed
-- Fixed links to version numbers in this changelog.
+- Fixed links to version numbers in the changelog.
 
 ## [0.3.1] - 2023-10-08
 ### Changed

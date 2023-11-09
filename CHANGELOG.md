@@ -3,11 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.1] - 2022-10-08
+## [1.0.0] - 2023-11-09
+### Changed
+- Fixed links to version numbers in this changelog.
+- Version bump to 1.0.0 to flag that `orjsonl` is stable. 
+
+## [0.3.1] - 2023-10-08
 ### Changed
 - Added tests for `append()` and `extend()` with `newline` set to `False` to achieve 100% coverage.
 
-## [0.3.0] - 2022-10-08
+## [0.3.0] - 2023-10-08
 ### Added
 - Added the `extend()` function, which serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
 
@@ -81,6 +86,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added the `save()` function, which serializes an iterable of Python objects to a UTF-8-encoded jsonl file.
 - Added the `append()` function, which serializes and appends an iterable of Python objects to a UTF-8-encoded jsonl file.
 
+[1.0.0]: https://github.com/umarbutler/orjsonl/compare/v0.3.1...v1.0.0
+[0.3.1]: https://github.com/umarbutler/orjsonl/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/umarbutler/orjsonl/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/umarbutler/orjsonl/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/umarbutler/orjsonl/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/umarbutler/orjsonl/compare/v0.1.3...v0.2.0
